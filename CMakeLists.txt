@@ -4,10 +4,10 @@ project(gflags-example CXX)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
 
-if (IS_DIRECTORY "${PROJECT_SOURCE_DIR}/gflags")
+if (EXISTS "${PROJECT_SOURCE_DIR}/gflags/CMakeLists.txt")
   add_subdirectory(gflags)
 else ()
   find_package(gflags REQUIRED)
 endif ()
 
-add_subdirectory(src)
+add_subdirectory(example)
