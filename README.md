@@ -35,9 +35,9 @@ git submodule update --init
 Build with CMake and GNU Make
 -----------------------------
 
-First, create a build directory inside the example project directory and
-configure the build using [CMake](https://cmake.org) to generate the Makefiles
-for [GNU Make](https://www.gnu.org/software/make/):
+Create a build directory inside the example project directory and configure the
+build using [CMake](https://cmake.org) to generate the Makefiles for
+[GNU Make](https://www.gnu.org/software/make/):
 ```
 mkdir build && cd build
 cmake -D CMAKE_BUILD_TYPE=Release ..
@@ -57,7 +57,10 @@ Build with Bazel
 The [Bazel](http://bazel.io) build tool uses the information in the WORKSPACE file
 to download and build the gflags library prior to the example binary. To build the
 example executable target named "foo", run the following command in the top level
-directory of the gflags example project which contains the WORKSPACE file.
+directory of the gflags example project which contains the WORKSPACE file. This
+will clone the gflags project and build the gflags library prior to the example
+executable upon first invocation. Bazel is caching the build files of the external
+gflags dependency and will not rebuild gflags when the foo/foo.cc file changes.
 
 ```
 bazel build \\foo
