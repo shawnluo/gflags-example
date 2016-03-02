@@ -40,7 +40,7 @@ configure the build using [CMake](https://cmake.org) to generate the Makefiles
 for [GNU Make](https://www.gnu.org/software/make/):
 ```
 mkdir build && cd build
-cmake ..
+cmake -D CMAKE_BUILD_TYPE=Release ..
 ```
 
 Then build the example executable named "foo" using GNU Make:
@@ -60,6 +60,7 @@ example executable target named "foo", run the following command in the top leve
 directory of the gflags example project which contains the WORKSPACE file.
 
 ```
-bazel build \\example:foo
+bazel build \\foo
 ```
 
+The resulting binary is ```bazel-bin/foo/foo``` inside the workspace directory.
