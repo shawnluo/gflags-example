@@ -1,4 +1,4 @@
-add_executable(foo foo.cc)
+add_executable(foo main.cc)
 if (TARGET gflags)
   target_link_libraries(foo gflags)
 else ()

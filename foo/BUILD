@@ -1,5 +1,5 @@
 cc_binary(
     name = "foo",
-    srcs = ["foo.cc"],
+    srcs = ["main.cc"],
     deps = ["//external:gflags"],
 )
