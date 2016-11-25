@@ -4,6 +4,12 @@
 DEFINE_bool(verbose, false, "Display program name before message");
 DEFINE_string(message, "Hello world!", "Message to print");
 
+static bool IsNonEmptyMessage(const char *flagname, const std::string &value)
+{
+  return value[0] != '\0';
+}
+DEFINE_validator(message, &IsNonEmptyMessage);
+
 int main(int argc, char *argv[])
 {
   gflags::SetUsageMessage("some usage message");
