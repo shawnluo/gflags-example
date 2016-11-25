@@ -1,2 +1,6 @@
 add_executable(foo foo.cc)
-target_link_libraries(foo gflags)
+if (TARGET gflags)
+  target_link_libraries(foo gflags)
+else ()
+  message(FATAL_ERROR "gflags target not defined")
+endif ()
