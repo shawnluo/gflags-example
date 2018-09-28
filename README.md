@@ -63,7 +63,7 @@ executable upon first invocation. Bazel is caching the build files of the extern
 gflags dependency and will not rebuild gflags when the foo/foo.cc file changes.
 
 ```
-bazel build \\foo
+bazel build foo
 ```
 
 The resulting binary is ```bazel-bin/foo/foo``` inside the workspace directory.
