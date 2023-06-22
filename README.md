@@ -67,3 +67,10 @@ bazel build foo
 ```
 
 The resulting binary is ```bazel-bin/foo/foo``` inside the workspace directory.
+
+
+run 
+----------------
+./foo/foo
+./foo/foo --param
+./foo/foo --param "dddddd"
